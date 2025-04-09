@@ -36,7 +36,7 @@
             </a>
           </li>
           <li>
-            <a href="{{url('Vehiculo')}}">
+            <a href="{{url('vehiculos')}}">
               <i class="fa fa-card"></i> 
               <span>VEHICULOS</span>
             </a>

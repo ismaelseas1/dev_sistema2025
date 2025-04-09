@@ -1,6 +1,6 @@
 <header class="main-header">
   <!-- Logo -->
-  <a href="{{url ('Inicio')}}" class="logo">
+  <a href="{{url ('Inicio')}}" class="logo" >
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini">
       <!-- LOGO DEL ICONO EN EL MENU DEL SISTEMA -->
@@ -8,9 +8,8 @@
 
       </span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg">
-      <img src="{{url('storage/plantilla/logo-blanco-lineal.png') }}" class="img-responsive" style="padding: 10px
-      0PX;">
+    <span class="logo-lg" >
+      <img src="{{url('storage/plantilla/patujuzoom.png') }}" class="img-responsive" style="padding-bottom: 10px; padding-top: 2px;">
     </span>
   </a>
     <!-- Header Navbar: style can be found in header.less -->
@@ -46,14 +45,15 @@
                 </div>
                 
                 <div class="pull-right">
-                  <a href="{{route('logout')}}" class="btn btn-danger btn-flat" onclick="event.preventDefault(); 
-                  document.getElementById('logout-from').sudmit();">Salir</a>
+                  <a href="{{ route('logout') }}" class="btn btn-danger btn-flat" 
+                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    Salir
+                  </a>
                 </div>
-
-                <form method="post" id="logout-from" action="{{route('logout')}}">
+                
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                   @csrf
                 </form>
-                
               </li>
             </ul>
           </li>

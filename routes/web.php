@@ -4,14 +4,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\SucursalesController;
 use App\Http\Controllers\VehiculoController;
+use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', function () {
-    return view('modulos.users.ingresar');
+    return view('modulos.users.Ingresar');
 });
 Route::get('Inicio', function () {
     return view('modulos.Inicio');
 });
 //Route::get('primer-Usuario', [UsuariosController::class, 'PrimerUsuario']);
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Auth::routes();
 //sucursales 
@@ -24,6 +27,7 @@ Route::get('Cambiar-Estado-Sucursal/{estado}/{id_sucursal}', [SucursalesControll
 //usuarios
 Route::get('Mis-Datos', function () {
     return view('modulos.users.Mis-Datos');
+    
 });
 Route::post('Mis-Datos', [UsuariosController::class, 'AtualizarMisDatos']);
 Route::get('Usuarios', [UsuariosController::class, 'index']);
