@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\SucursalesController;
+use App\Http\Controllers\VehiculoController;
 
 Route::get('/', function () {
     return view('modulos.users.ingresar');
@@ -31,3 +32,11 @@ Route::get('Editar-Usuario/{id}', [UsuariosController::class, 'edit']);
 Route::put('Actualizar-Usuario', [UsuariosController::class, 'update']);
 //Route::get('Cambiar-Estado-Usuario/{estado}/{id}', [UsuariosController::class, 'CambiarEstado']);
 //Route::get('Cambiar-Estado-Usuario/{estado}/{id}', [UsuariosController::class, 'CambiarEstado']);
+
+//vehiculos
+Route::get('vehiculos', [VehiculoController::class, 'index']);
+Route::post('vehiculos', [VehiculoController::class, 'store']);
+Route::get('Editar-Vehiculo/{id}', [VehiculoController::class, 'edit']);
+Route::put('Actualizar-Vehiculo', [VehiculoController::class, 'update']);
+Route::get('Cambiar-Estado-Vehiculo/{estado}/{id}', [VehiculoController::class, 'CambiarEstado']);
+//Route::get('Cambiar-Estado-Vehiculo/{estado}/{id}', [VehiculoController::class, 'CambiarEstado']);
